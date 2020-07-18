@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-URL=$(curl https://releases.hashicorp.com/terraform/0.12.26/  | grep 64-bit | grep linux_amd64.zip | awk -F \" '{print $2}')
+URL=$(curl https://releases.hashicorp.com/terraform/0.12.26/ | grep linux_amd64.zip | awk -F \" '{print $2}')
 FILE=$(echo $URL | awk -F / '{print $NF}')
 curl -s -L -J -O $URL 
 sudo yum install unzip -y 
